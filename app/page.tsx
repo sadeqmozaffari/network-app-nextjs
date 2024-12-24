@@ -1,6 +1,6 @@
-import { Button } from '@mantine/core';
 import { IconBriefcase } from '@tabler/icons-react';
 import { Roboto_Mono } from 'next/font/google';
+import Link from 'next/link';
 
 const robertoFont = Roboto_Mono({ subsets: ['latin'] });
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <div className={`${robertoFont.className} font-bold`}>
         Professional Network
       </div>
-      <Button>SignIn</Button>
+      <Link href="/signin">Sign In</Link>
     </div>
   );
 }
