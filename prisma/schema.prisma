@@ -17,12 +17,32 @@ model User {
   jobTitle      String?
   accounts      Account[]
   sessions      Session[]
+  usersToSkills UsersToSkills[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+model Skill{
+  id             String @id @default(cuid()) 
+  name           String @unique
+  usersToSkills UsersToSkills[]
+}
+model UsersToSkills {
+  id      String @id @default(cuid())
+  userId  String
+  skillId String
+  rating  Int @default(0) 
+  
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill Skill @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+
+  @@unique([userId, skillId]) // اطمینان از یکتایی
+}
+
  
 model Account {
   userId            String
