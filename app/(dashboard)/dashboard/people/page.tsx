@@ -1,9 +1,7 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import PaginationContainer from '../../../../components/pagination-container';
 import UserCard from '../../../../components/user-card';
 import Link from 'next/link';
-
-const prisma = new PrismaClient();
 
 const PER_PAGE = 20;
 

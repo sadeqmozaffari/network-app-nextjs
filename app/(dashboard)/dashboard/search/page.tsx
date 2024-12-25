@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import UserTable from '../../../../components/user-table';
 
-const prisma = new PrismaClient();
+
 
 async function searchUsers(query: string) {
   const users = await prisma.user.findMany({
