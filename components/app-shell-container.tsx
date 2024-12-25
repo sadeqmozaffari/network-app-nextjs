@@ -13,14 +13,15 @@ import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import SearchInput from './search-input';
 
 export default function AppShellContainer({
   children,
-  user
+  user,
 }: {
-    children: React.ReactNode;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    user: any;
+  children: React.ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  user: any;
 }) {
   const [opend, { toggle }] = useDisclosure();
   const pathname = usePathname();
@@ -37,7 +38,9 @@ export default function AppShellContainer({
             Pofessional Network
           </div>
           <div className="flex justify-end gap-5 h-full items-center p-5">
-            <div>Search</div>
+            <div>
+              <SearchInput />
+            </div>
 
             <div>
               <Menu>
@@ -57,7 +60,7 @@ export default function AppShellContainer({
                 </Menu.Item> */}
 
                   <Menu.Item leftSection={<IconLogout />}>
-                    <button onClick={() => signOut}>Profile</button>
+                    <button onClick={() => signOut()}>SignOut</button>
                   </Menu.Item>
                 </Menu.Dropdown>
               </Menu>
