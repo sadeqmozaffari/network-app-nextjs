@@ -1,5 +1,6 @@
 import { auth } from '@/lib/auth';
 import LoginBtn from '../../../components/login-btn';
+import { redirect } from 'next/navigation';
 // import { getProviders } from 'next-auth/react';
 // import SigninBtn from '../../../components/signIn-btn';
 
@@ -7,11 +8,7 @@ export default async function SignIn() {
   const session = await auth();
 
   if (session) {
-    return {
-      redirect: {
-        destination: '/',
-      },
-    };
+    redirect('/dashboard');
   }
   // const providers = await getProviders();
   return (
