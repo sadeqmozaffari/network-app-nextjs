@@ -59,8 +59,11 @@ export default function AppShellContainer({
                   <Link href="/">Profile</Link>
                 </Menu.Item> */}
 
-                  <Menu.Item leftSection={<IconLogout />}>
-                    <button onClick={() => signOut()}>SignOut</button>
+                  <Menu.Item
+                    leftSection={<IconLogout />}
+                    onClick={() => signOut()}
+                  >
+                    SignOut
                   </Menu.Item>
                 </Menu.Dropdown>
               </Menu>

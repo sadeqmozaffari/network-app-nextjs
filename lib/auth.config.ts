@@ -8,4 +8,22 @@ export default {
       clientSecret: process.env.GITHUB_SECRET!,
     }),
   ],
+  callbacks: {
+    jwt: async ({ token, account, user }) => {
+      if (account) {
+        token.accessToken = account.access_token;
+        token.id = user.id;
+      }
+      if (user) {
+        token.accessToken = user.id;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      session.accessToken = token.accessToken;
+      session.user.id = token.sub;
+
+      return session;
+    },
+  },
 } satisfies NextAuthConfig;
