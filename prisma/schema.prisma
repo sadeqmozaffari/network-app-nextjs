@@ -15,6 +15,7 @@ model User {
   firstName     String?
   lastName      String?
   jobTitle      String?
+  bio           String?
   accounts      Account[]
   sessions      Session[]
   usersToSkills UsersToSkills[]
