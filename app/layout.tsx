@@ -5,6 +5,7 @@ import './globals.css';
 
 import {
   ColorSchemeScript,
+  createTheme,
   mantineHtmlProps,
   MantineProvider,
 } from '@mantine/core';
@@ -21,6 +22,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const theme = createTheme({
+  defaultRadius: 'sm',
+  primaryColor: 'blue',
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MantineProvider defaultColorScheme="dark">
+        <MantineProvider defaultColorScheme="dark" theme={theme}>
           {children}
           <Notifications />
         </MantineProvider>

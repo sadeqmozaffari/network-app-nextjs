@@ -162,7 +162,7 @@ export async function deleteUserToSkill(skillId: string) {
   const session = await auth();
   await prisma.usersToSkills.deleteMany({
     where: {
-      skillId: skillId,
+      id: skillId,
       userId: session?.user.id,
     },
   });
