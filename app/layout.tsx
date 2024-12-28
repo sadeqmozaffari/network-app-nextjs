@@ -12,6 +12,7 @@ import {
 import '@mantine/tiptap/styles.css';
 import '@mantine/notifications/styles.css';
 import '@/styles/editor.css';
+import '@mantine/charts/styles.css';
 import { Notifications } from '@mantine/notifications';
 
 const geistSans = Geist({
