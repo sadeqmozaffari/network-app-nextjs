@@ -18,6 +18,7 @@
     "@mantine/tiptap": "^7.15.2",
     "@prisma/client": "^5.22.0",
     "@tabler/icons-react": "^3.26.0",
+    "@tailwindcss/typography": "github:tailwindcss/typography",
     "@tiptap/extension-highlight": "^2.10.4",
     "@tiptap/extension-link": "^2.10.4",
     "@tiptap/extension-subscript": "^2.10.4",
